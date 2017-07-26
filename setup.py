@@ -2,7 +2,7 @@
 from setuptools import setup
 
 setup(
-    name='remote-print',
+    name='rprint',
     version='0.0.1',
     url='https://github.com/cletrix/rprint.git',
     license='MIT License',
