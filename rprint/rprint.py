@@ -10,12 +10,13 @@ class Rprint:
 
     def __init__(self, host='localhost', port=10000):
         if not Rprint.me:
-            self.name = 'Rprint'
+            self.name = 'user'
             self.host = host
             self.port = port
+            self.version = '0.0.7'
 
     @staticmethod
-    def config(name, host='localhost', port=10000):
+    def config(name='user', host='localhost', port=10000):
         Rprint.me.name = name
         Rprint.me.host = host
         Rprint.me.port = port
@@ -28,6 +29,14 @@ class Rprint:
             sock.sendto(message.encode('utf-8'), server_address)
         finally:
             sock.close()
+
+    @staticmethod
+    def send_from(message):
+        Rprint.send("{}:{}".format(Rprint.me.name,message))
+
+    @staticmethod
+    def version():
+        return Rprint.me.version
 
     @staticmethod
     def server(host='localhost', port=10000):
@@ -48,7 +57,7 @@ class Rprint:
         info = """
 server example:
     (case 1)
-        from rprint import Rprint
+        from rprint.rprint import Rprint
         Rprint.server()
 
     (case 2)
@@ -57,7 +66,7 @@ server example:
     
 client example:
     (case 1)
-        from rprint import Rprint
+        from rprint.rprint import Rprint
         Rprint.send('ops')
     (case 2)
         from rprint import Rprint
@@ -71,6 +80,7 @@ Rprint.start()
 
 if __name__ == "__main__":
 
+    print(Rprint.version())
     Rprint.send('ops')
 
 
