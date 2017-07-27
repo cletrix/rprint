@@ -21,7 +21,7 @@ class Rprint:
         Rprint.me.port = port
 
     @staticmethod
-    def send(message):    
+    def send(message):
         try:
             sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
             server_address = (Rprint.me.host, Rprint.me.port)
@@ -66,7 +66,6 @@ client example:
             """
 
         print(info)
-
 
 Rprint.start()
 
