@@ -1,0 +1,8 @@
+
+rm -rf dist/
+python setup.py bdist_wheel --universal
+twine upload dist/*
+
+
+https://packaging.python.org/tutorials/distributing-packages/#uploading-your-project-to-pypi
+https://pypi.python.org/pypi?%3Aaction=pkg_edit&name=rprint
