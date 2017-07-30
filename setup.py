@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='rprint',
-    version='0.0.7',
+    version='0.0.8',
     url='https://github.com/cletrix/rprint.git',
     license='MIT License',
     author='Cleyton Pedroza',
